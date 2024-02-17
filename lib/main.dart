@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:banking/core/pesentation/widgets/card_widget.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 240,
               padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(255, 10, 10, 1),
+                  color: Color.fromRGBO(234, 190, 63, 50),
                   borderRadius: BorderRadiusDirectional.circular(10.0)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   CardWidget1(),
                   CardWidget2(),
                   ElevatedButton(onPressed: ()=> {}, child: Text("Press"))
-                  
+
                 ],
               ))),
       // This trailing comma makes auto-formatting nicer for build methods.

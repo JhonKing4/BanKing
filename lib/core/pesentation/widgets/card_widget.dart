@@ -11,7 +11,7 @@ class CardWidget extends StatelessWidget {
           margin: EdgeInsets.all(1.0),
           color: (Colors.white),
         ),
-        Image.asset("assets/images/iconbanorte.png", height: 40.0),
+        Image.asset("assets/images/iconbanorte1.png", height: 40.0),
         const Text(
           "Banorte",
           style: TextStyle(
