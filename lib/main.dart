@@ -1,4 +1,7 @@
-
+import 'package:banking/core/data/models/cardModel.dart';
+import 'package:banking/core/data/models/userModel.dart';
+import 'package:banking/core/domain/entities/user.dart';
+import 'package:banking/core/domain/entities/card.dart';
 import 'package:banking/core/pesentation/widgets/card_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -72,6 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final User user = User(
+        name: "Jhonking",
+        email: "king@gmail.com",
+        password: "12455",
+        telephone: "95213322");
+    final CardEntity card = CardEntity(cardOwner: "Jhonking", cardNumber: "1245388", cardDate: "15/25", logo: "logo");
+    final UserModel userModel = UserModel.fromEntity(user);
+    final CardModel cardModel = CardModel.fromEntity(card);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -100,6 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Text(userModel.name),
+                  Text(cardModel.cardNumber),
                   CardWidget(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -117,8 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   CardWidget1(),
                   CardWidget2(),
-                  ElevatedButton(onPressed: ()=> {}, child: Text("Press"))
-
+                  ElevatedButton(onPressed: () => {}, child: Text("Press"))
                 ],
               ))),
       // This trailing comma makes auto-formatting nicer for build methods.
