@@ -1,3 +1,4 @@
+import 'package:banking/core/domain/entities/user.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
@@ -71,3 +72,13 @@ class CardWidget2 extends StatelessWidget {
   }
 }
 
+class Demo2 extends StatelessWidget{
+  final User user;
+
+  Demo2({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(user.telephone);
+  }
+}

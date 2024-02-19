@@ -129,11 +129,25 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   CardWidget1(),
+                  Demo2(user: user),
                   CardWidget2(),
+                  Demo1(user: user),
                   ElevatedButton(onPressed: () => {}, child: Text("Press"))
                 ],
               ))),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+
+class Demo1 extends StatelessWidget{
+  final User user;
+
+  Demo1({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(user.name);
   }
 }
