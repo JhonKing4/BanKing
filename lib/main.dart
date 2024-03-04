@@ -1,8 +1,11 @@
+import 'dart:html';
+
 import 'package:banking/core/data/models/cardModel.dart';
 import 'package:banking/core/data/models/userModel.dart';
 import 'package:banking/core/domain/entities/user.dart';
 import 'package:banking/core/domain/entities/card.dart';
 import 'package:banking/core/pesentation/widgets/card_widget.dart';
+import 'package:banking/core/pesentation/widgets/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -80,7 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
         email: "king@gmail.com",
         password: "12455",
         telephone: "95213322");
-    final CardEntity card = CardEntity(cardOwner: "Jhonking", cardNumber: "1245388", cardDate: "15/25", logo: "logo");
+    final CardEntity card = CardEntity(
+        cardOwner: "Jhonking",
+        cardNumber: "1245388",
+        cardDate: "15/25",
+        logo: "logo");
     final UserModel userModel = UserModel.fromEntity(user);
     final CardModel cardModel = CardModel.fromEntity(card);
     // This method is rerun every time setState is called, for instance as done
@@ -101,20 +108,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
           child: Container(
-              width: 380,
-              height: 240,
+              width: 300,
+              height: 400,
               padding: EdgeInsets.all(10.0),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(234, 190, 63, 50),
-                  borderRadius: BorderRadiusDirectional.circular(10.0)),
+                  borderRadius: BorderRadiusDirectional.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 238, 68, 68),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 0))
+                  ]),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(userModel.name),
-                  Text(cardModel.cardNumber),
-                  CardWidget(),
-                  Row(
+                  //Text(userModel.name),
+                  //Text(cardModel.cardNumber),
+                  //CardWidget(),
+                  /*Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
@@ -127,12 +141,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(color: Colors.white, fontSize: 25.0),
                       ),
                     ],
-                  ),
-                  CardWidget1(),
-                  Demo2(user: user),
-                  CardWidget2(),
-                  Demo1(user: user),
-                  ElevatedButton(onPressed: () => {}, child: Text("Press"))
+                  ),*/
+                  //CardWidget1(),
+                  //Demo2(user: user),
+                  //CardWidget2(),
+                  //Demo1(user: user),
+                  LoginPage(),
+                  //ElevatedButton(onPressed: () => {}, child: Text("Press"))
                 ],
               ))),
       // This trailing comma makes auto-formatting nicer for build methods.
@@ -140,8 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-class Demo1 extends StatelessWidget{
+class Demo1 extends StatelessWidget {
   final User user;
 
   Demo1({required this.user});
