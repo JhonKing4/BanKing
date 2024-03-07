@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:banking/core/pesentation/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -42,7 +43,9 @@ class _LoginPage extends State<LoginPage> {
           ],
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeView()));
+          },
           child: Text("Login", style: TextStyle(color: Colors.white),),
           style: ButtonStyle(
               backgroundColor:
