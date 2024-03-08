@@ -23,10 +23,10 @@ class _LoginPage extends State<LoginPage> {
         ),
         //Image.network("https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt8a61c9bc550bfd80/6595f3c89123ba0407bb1649/1863295425_2.jpg?auto=webp&format=pjpg&width=3840&quality=60", width: 200,),
         TextField(
-            decoration: InputDecoration(hintText: "Phone number"),
+            decoration: const InputDecoration(hintText: "Phone number"),
             controller: TextEditingController(text: _phoneNumber)),
         TextField(
-          decoration: InputDecoration(hintText: "Password"),
+          decoration: const InputDecoration(hintText: "Password"),
           controller: TextEditingController(text: _password),
         ),
         Row(
@@ -35,11 +35,11 @@ class _LoginPage extends State<LoginPage> {
             Checkbox(
               value: _isChecked,
               onChanged: (newValue) => {setState(() => _isChecked = newValue!)},
-              checkColor: Color.fromRGBO(255, 255, 255, 1),
+              checkColor: const Color.fromRGBO(255, 255, 255, 1),
               fillColor:
-                  MaterialStateProperty.all(Color.fromRGBO(105, 0, 0, 1)),
+                  MaterialStateProperty.all(const Color.fromRGBO(105, 0, 0, 1)),
             ),
-            Text("Mantener sesion activa")
+            const Text("Mantener sesion activa")
           ],
         ),
         ElevatedButton(
@@ -49,7 +49,7 @@ class _LoginPage extends State<LoginPage> {
           child: Text("Login", style: TextStyle(color: Colors.white),),
           style: ButtonStyle(
               backgroundColor:
-                  MaterialStateProperty.all(Color.fromRGBO(35, 206, 169, 0))),
+                  MaterialStateProperty.all(const Color.fromRGBO(35, 206, 169, 0))),
         )
       ],
     );
