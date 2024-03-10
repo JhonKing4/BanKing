@@ -1,7 +1,6 @@
-import 'dart:html';
-
 import 'package:banking/core/pesentation/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:local_auth/local_auth.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,6 +14,28 @@ class _LoginPage extends State<LoginPage> {
   String _password = "";
   @override
   Widget build(BuildContext context) {
+    final LocalAuthentication _localAuthentication = LocalAuthentication();
+
+    Future<void> _auth() async{
+      bool authenticated = false;
+      try{
+        authenticated = await _localAuthentication.authenticate(
+          localizedReason: "Autenticate para acceder",
+          options: AuthenticationOptions(stickyAuth: true,useErrorDialogs: true)
+          );
+      } catch (e) {
+        print(e);
+      }
+      if (authenticated) {
+        Navigator.pushReplacement <void , void>(
+          context,
+          MaterialPageRoute <void>(
+            builder: (BuildContext context) => HomeView()));
+      } else {
+        print("Fallo auth");
+      }
+    }
+
     return Column(
       children: <Widget>[
         ClipRRect(
@@ -50,7 +71,8 @@ class _LoginPage extends State<LoginPage> {
           style: ButtonStyle(
               backgroundColor:
                   MaterialStateProperty.all(const Color.fromRGBO(35, 206, 169, 0))),
-        )
+        ),
+        IconButton(onPressed: () => _auth() , icon: const Icon(Icons.fingerprint)),
       ],
     );
   }
