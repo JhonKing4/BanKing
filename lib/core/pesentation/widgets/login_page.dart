@@ -40,7 +40,7 @@ class _LoginPage extends State<LoginPage> {
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.circular(25),
-          child: Image.network("https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt8a61c9bc550bfd80/6595f3c89123ba0407bb1649/1863295425_2.jpg?auto=webp&format=pjpg&width=3840&quality=60")
+          child: Image.network("https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt8a61c9bc550bfd80/6595f3c89123ba0407bb1649/1863295425_2.jpg?auto=webp&format=pjpg&width=3840&quality=60",width: 230,)
         ),
         //Image.network("https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt8a61c9bc550bfd80/6595f3c89123ba0407bb1649/1863295425_2.jpg?auto=webp&format=pjpg&width=3840&quality=60", width: 200,),
         TextField(
